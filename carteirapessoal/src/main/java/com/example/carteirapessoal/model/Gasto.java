@@ -5,9 +5,11 @@ import java.sql.Date;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+
+
 @Entity
-@Table(name = "Despesas")
-public class Despesa {
+@Table(name = "Gastos")
+public class Gasto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //geração automatica de id
@@ -20,8 +22,11 @@ public class Despesa {
     private double valor;
 
     @NotBlank
-    private Date vencimento;
+    private Date data;
 
+    private String local;
+
+    private String quantidade;
 
 
     public Long getId() {
@@ -48,15 +53,30 @@ public class Despesa {
         this.valor = valor;
     }
 
-    public Date getVencimento() {
-        return this.vencimento;
+    public Date getData() {
+        return this.data;
     }
 
-    public void setVencimento(Date vencimento) {
-        this.vencimento = vencimento;
+    public void setData(Date data) {
+        this.data = data;
     }
-    
-  
-    
+
+    public String getLocal() {
+        return this.local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public String getQuantidade() {
+        return this.quantidade;
+    }
+
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+
+
 
 }
